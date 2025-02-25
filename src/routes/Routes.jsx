@@ -9,6 +9,7 @@ import Task from "../pages/Task";
 import LogIn from "../LogIn/LogIn";
 import SignUp from "../SignUp/SignUp";
 import Error from "../Error/Error";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -21,10 +22,10 @@ const router = createBrowserRouter([
     }, 
       // Home page
       { path: "dashboard", 
-        element: <Dashboard />
+        element: <PrivateRoute><Dashboard /></PrivateRoute>
        }, 
       { path: "tasks", 
-        element: <Task />
+        element:  <PrivateRoute><Task /> </PrivateRoute>
        }, 
       { path: "login", 
         element: <LogIn />
